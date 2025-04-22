@@ -1,0 +1,565 @@
+<!-- author@Aaliya Mohamad Usman P2840499 (HTML, CSS) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About DMU</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="script.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #000;
+    }
+
+    .open-day-banner {
+      background-color: #000;
+      color: white;
+    }
+
+    .about-hero {
+      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('images/Dubai-3.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .about-hero h1 {
+      font-size: 3rem;
+      max-width: 800px;
+      line-height: 1.4;
+    }
+
+    .about-section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: transparent;
+      border-radius: 12px;
+    }
+
+    .about-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #000;
+      padding-left: 1rem;
+    }
+
+    .about-section p {
+      line-height: 1.8;
+      color: #333;
+      text-align: justify;
+    }
+
+    .mission-vision {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .mission-box {
+      flex: 1;
+      min-width: 280px;
+      background: #000;
+      color: white;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .mission-box h3 {
+      margin-top: 0;
+    }
+
+    .mission-box p {
+        color: #fff;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-card {
+      background: #fff;
+      border-left: 4px solid #000;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .stat-card h3 {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+
+    .stat-card p {
+      color: #555;
+      text-align: center;
+    }
+
+    .more-about-content {
+        margin-top: 3rem;
+      }
+  
+      .info-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 2rem;
+        
+      }
+  
+      .info-card {
+        flex: 1;
+        min-width: 280px;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.05);
+        border-left: 4px solid #000;
+      }
+  
+      .info-card h4 {
+        margin-top: 0;
+      }
+
+    .choose-dmu {
+        background-color: #f4f4f4;
+        padding: 4rem 1rem;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    
+    .study-dmu {
+        background-color: #ffffff;
+        border-radius: 12px;
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    .study-dmu img {
+        width: 100%;
+        max-width: 480px;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        object-fit: cover;
+    }
+    
+    .study-dmu .text {
+        flex: 1;
+        min-width: 280px;
+        padding: 20px
+    }
+    
+    .study-dmu .text h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: #000;
+    }
+    
+    .study-dmu .text p {
+        font-size: 1.05rem;
+        color: #333;
+        line-height: 1.7;
+        margin-bottom: 1.2rem;
+        
+    }
+    
+    .study-dmu .open-day-button {
+        background-color: transparent;
+        color: black;
+        border: 2px solid black;
+        padding: 0.8rem 1.4rem;
+        border-radius: 25px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .study-dmu .open-day-button:hover {
+        background-color: black;
+        color: white;
+    }
+    
+    @media (max-width: 768px) {
+        .study-dmu {
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        .study-dmu img {
+            max-width: 100%;
+        }
+    
+        .study-dmu .text h1 {
+            font-size: 2rem;
+        }
+    
+        .study-dmu .text p {
+            font-size: 1rem;
+        }
+    }    
+
+    .university-footer {
+        background-color: #000;
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+        padding: 3rem 2rem 0;
+      }
+      
+      .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        border-bottom: 1px solid #333;
+        padding-bottom: 2rem;
+      }
+      
+      .footer-info {
+        flex: 1;
+        min-width: 250px;
+      }
+      
+      .footer-info p {
+        margin: 0.5rem 0;
+        font-size: 0.95rem;
+      }
+      
+      .footer-logo {
+        max-width: 160px;
+        margin-bottom: 1rem;
+      }
+      
+      .social-icons {
+        margin-top: 1rem;
+        display: flex;
+        gap: 0.8rem;
+      }
+      
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+      
+      .social-icons a:hover {
+        background: white;
+        color: black;
+      }
+      
+      .footer-links {
+        flex: 1;
+        min-width: 250px;
+      }
+      
+      .footer-links h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .footer-links li {
+        margin-bottom: 0.8rem;
+      }
+      
+      .footer-links a {
+        color: white;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+      
+      .footer-links a:hover {
+        color: #ccc;
+      }
+      
+      .footer-map {
+        flex: 1;
+        min-width: 300px;
+        text-align: right;
+      }
+      
+      .footer-map img {
+        width: 100%;
+        max-width: 300px;
+        object-fit: contain;
+      }
+      
+      .footer-bottom {
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 0.9rem;
+        color: #aaa;
+      }
+      
+      .footer-legal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      
+      .footer-legal a {
+        color: #aaa;
+        text-decoration: none;
+      }
+      
+      .footer-legal a:hover {
+        text-decoration: underline;
+        color: white;
+      }
+      
+      @media (max-width: 768px) {
+        .footer-top {
+          flex-direction: column;
+          text-align: center;
+        }
+      
+        .footer-map {
+          text-align: center;
+        }
+      
+        .social-icons {
+          justify-content: center;
+        }
+      }   
+  </style>
+</head>
+<body>
+    <section class="header"> 
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/logo with name.png" alt="University Logo">
+            </a>
+            <div class="nav-buttons">
+                <button class="menu-toggle">Menu</button>
+                <a href="admin_login.php"><button class="admin-login-btn">Log In</button></a>
+            </div>
+        </nav>
+    
+        <!-- Sidebar Menu -->
+        <div class="sidebar-menu">
+            <div class="sidebar-logo">
+                <a href="index.html">
+                    <img src="images/dmu white logo.png" alt="University Logo">
+                </a>
+            </div>
+            <button class="close-menu">&times;</button>
+            <nav>
+                <ul>
+                    <li class="menu-item">
+                        <span class="menu-title">Study ▸</span>
+                        <ul class="submenu">
+                            <li><a href="foundation-courses.php">International Foundataion Year</a></li>
+                            <li><a href="undergraduate-courses.php">Undergraduate</a></li>
+                            <li><a href="postgraduate-courses.php">Postgraduate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="campus.html">Campus</a></li>
+                    <li><a href="apply.php">Apply Now!</a></li>
+                </ul>
+                <!-- <div class="menu-images">
+                    <div class="menu-image-box">
+                        <img src="images/campus.jpg" alt="Sustainability and Social Responsibility">
+                        <p>Sustainability and social responsibility</p>
+                        <a href="#">Read about our contributions so far →</a>
+                    </div>
+                    <div class="menu-image-box">
+                        <img src="images/campus02.jpg" alt="Discover Birmingham">
+                        <p>Discover Birmingham</p>
+                        <a href="#">Find out more →</a>
+                    </div>
+                    <div class="menu-image-box">
+                        <img src="images/pexels-divinetechygirl-1181675.jpg" alt="International Summer School">
+                        <p>International Summer School</p>
+                        <a href="#">Find out more →</a>
+                    </div> -->
+                </div> 
+            </div>
+        </nav>
+    </section>
+<section class="about-hero">
+  <h1>Welcome to De Montfort University Dubai — Where Innovation Meets Opportunity</h1>
+</section>
+
+<section class="about-section">
+  <h2>Who We Are</h2>
+  <p>De Montfort University (DMU) Dubai is the newest addition to DMU's global family. Founded in 1870, DMU offers a range of industry-relevant undergraduate and postgraduate programs. Rooted in British academic excellence and international perspectives, we provide students with an inclusive and empowering learning environment. Our campus in Dubai’s Internet City offers state-of-the-art facilities, a vibrant student life, and excellent career support for your future success.<br>Our courses embed employability in their curriculum and our research feeds into students’ learning. DMU has been ranked in the top 20 universities for graduate prospects in The Sunday Times Good University Guide 2020 and previous DMU graduates have gone on to win Oscars and work with organisations such as the BBC, HSBC, Nike, BMW and the NHS. </p>
+
+  <div class="mission-vision">
+    <div class="mission-box">
+      <h3>Our Mission</h3>
+      <p>To empower future leaders through globally recognized education that blends creativity, research, and innovation to shape a better tomorrow.</p>
+    </div>
+    <div class="mission-box">
+      <h3>Our Vision</h3>
+      <p>To be a leading international university that fosters excellence in learning, community impact, and career advancement for students worldwide.</p>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3>150+</h3>
+      <p>Years of UK Academic Excellence</p>
+    </div>
+    <div class="stat-card">
+      <h3>100+</h3>
+      <p>Partner Institutions Globally</p>
+    </div>
+    <div class="stat-card">
+      <h3>95%</h3>
+      <p>Graduate Employability Rate</p>
+    </div>
+    <div class="stat-card">
+      <h3>Top 20</h3>
+      <p>UK University for Teaching Quality</p>
+    </div>
+  </div>
+  <br>
+  <h2>Block Teaching: An Innovative Approach To Teaching.</h2>
+  <p>At DMU, it’s our goal to help every student reach their goal, and you deserve a positive teaching and learning experience. With this in mind, the majority of our undergraduate and postgraduate students will get to enjoy an innovative approach to learning known as block teaching. This allows you to focus on one subject at a time instead of several at once, with more regular assessments and a better study‑life balance. DMU is one of the few universities in the country to offer the block teaching method.
+    
+    <br>
+    <br>
+
+    With block teaching, not only will you have more time to learn your subject in depth, but you will also benefit from a simple timetable with space to enjoy all that university life has to offer such as sports, societies, meeting friends and discovering your new city. For postgraduate students, this means more time for work, professional development, caring responsibilities, and everything else that's important to you.
+    
+    <br>
+    <br>
+
+    Our block-taught courses are informed by industry knowledge and practice, with many accredited by professional bodies. These carefully designed courses are delivered by passionate and talented academics, who will help you develop the skills to achieve your goals and get you started on your career path. In fact, our teaching and facilities are among the reasons we are rated ‘Excellent’ Five Star by QS Top Universities.</p>
+
+  <div class="more-about-content">
+    <h2>Why Students Choose DMU</h2>
+    <p>Our commitment to academic excellence, employability, and innovation ensures students leave with the skills and confidence needed to succeed. We offer globally recognized degrees, personal development programs, and dedicated career services that prepare students for the job market from day one.</p>
+
+    <div class="info-cards">
+      <div class="info-card">
+        <h3>Career-Centric Curriculum</h3>
+        <p>Our courses are designed in collaboration with industry professionals and updated regularly to reflect emerging trends and demands.</p>
+      </div>
+      <div class="info-card">
+        <h3>Vibrant Campus Life</h3>
+        <p>Join student clubs, cultural societies, and academic workshops that enrich your personal and professional growth.</p>
+      </div>
+      <div class="info-card">
+        <h3>Global Perspective</h3>
+        <p>Benefit from exchange opportunities and a diverse campus community that prepares you for success anywhere in the world.</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <h2>Our faculties</h2>
+  <p>All De Montfort University (DMU) students belong to one of four faculties.
+    <br>
+    <br>
+    Each faculty delivers a wide range of courses to students as well as overseeing world-changing research and fostering enviable commercial links that inform our teaching and ensure DMU courses are relevant to modern employers.
+    <br>
+    <br>
+    The <strong>Faculty of Arts, Design and Humanities</strong> brings together DMU’s creative disciplines. Its courses range from traditional to boundary pushing and research is rated as internationally excellent. Names such as shoe guru Jimmy Choo and novelist Adele Parks have lectured students thanks to the faculty’s exceptional industry links.
+    <br>
+    <br>
+    The <strong>Faculty of Business and Law</strong> delivers a wide range of undergraduate and postgraduate courses, including accounting, law, politics, marketing and business studies, that are all designed with employability in mind.  The faculty is known for its excellent teaching, leading edge research and superb links with industry. 
+    <br>
+    <br>
+    The <strong>Faculty of Health and Life Sciences</strong> educates and develops current and future healthcare professionals. Our long-standing expertise and strong links with industry ensure our students get a head start in their career. Many of our courses are accredited or endorsed by professional bodies, ensuring our teaching is delivered to the highest quality that is recognised by, and relevant to, current practice. Our strong links with industry leaders and direct input from experienced professionals ensure our courses provide students with the essential and specialist knowledge and skills required for graduate jobs.
+    <br>
+    <br>
+    The <strong>Faculty of Computing, Engineering and Media</strong> trains engineers, computer scientists and media technologists alike. From cyber security and games programming to electronic engineering and radio production, teaching and research is exceptionally varied and constantly being updated and enhanced to ensure industry relevance. Facilities are also industry-standard, so graduates have the skills required for successful careers.</p>
+  <br>
+  <h2>Research at DMU</h2>
+  <p>At DMU, we have an ambitious Research Strategy which aims to make research central to our mission as a university. As a university committed to the public good, we have a track record of research that impacts society and makes a real difference to people’s lives through improvements to health and well-being, infrastructure, creativity, economic growth, business and civil society. 
+    
+    As the United Nations' (UN) designated Global Hub for Sustainable Development Goal (SDG) 16 - the only UK university to be designated as such - we have a commitment to address the UN SDGs in our research, teaching and enterprise activity. </p>
+</section>
+
+<section class="choose-dmu" id="choose-dmu">
+    <div class="study-dmu">
+      <img src="images/unnamed.jpg" alt="Study at DMU">
+      <div class="text">
+        <h1>Got Questions?</h1>
+        <p>Get in touch with our team for questions and enquires. Leave us a message and we will be sure to get back!</p>
+        <a href="apply.php" class="open-day-button">Contact Us &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+<footer class="university-footer">
+    <div class="footer-top">
+      <div class="footer-info">
+        <img src="images/dmu white logo.png" alt="University Logo" class="footer-logo">
+        <p>Dubai, United Arab Emirates<br>Building #12, Dubai Internet City</p>
+        <p>Tel: +971 4 123 4567</p>
+  
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+  
+      <div class="footer-links">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#">Culture and Collections →</a></li>
+          <li><a href="#">Schools, Institutes & Departments →</a></li>
+          <li><a href="#">Services and Facilities →</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Legal</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Freedom of Information</a>
+        <a href="#">Cookies</a>
+        <a href="apply.php">Contact Us</a>
+      </div>
+      <p>&copy; De Montfort University 2025. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
