@@ -1,0 +1,872 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Website Assignment</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="script.js"></script>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .banner {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(4, 9, 30, 0.451)), url('images/banner main.jpeg');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 580px;
+        display: flex;
+        justify-content: flex-start; /* Align to left */
+        align-items: flex-end; /* Push content down */
+        padding: 0 5% 8%; /* Bottom padding to control vertical space */
+        color: white;
+        text-align: left;
+      }      
+      
+      .banner-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+      
+      .banner-content a.apply-button,
+      .banner-content a.open-day-button {
+        padding: 0.8rem 1.4rem;
+        border-radius: 25px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+      
+      .banner-content a.apply-button {
+        background-color: white;
+        color: black;
+      }
+      
+      .banner-content a.apply-button:hover {
+        background-color: #eaeaea;
+      }
+      
+      .banner-content a.open-day-button {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+      
+      .banner-content a.open-day-button:hover {
+        background-color: white;
+        color: black;
+      }       
+
+    .open-day-banner {
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url('images/unnamed.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 5%;
+        
+    }
+
+    .banner-content {
+        max-width: 600px;
+    }
+
+    .banner-content h1 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 1.3;
+        margin-bottom: 2rem;
+    }   
+
+    .view-course-button, .apply-button,
+    .open-day-button {
+        background-color: white;
+        color: black;
+        padding: 0.8rem 1.4rem;
+        border-radius: 25px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .open-day-button {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+    }
+
+    .apply-button:hover {
+        background-color: #eaeaea;
+    }
+
+    .open-day-button:hover {
+        background-color: white;
+        color: black;
+    }
+
+    .study-options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px 1rem;
+        background-color: #fff;
+    }
+
+    .study-card {
+        background: rgb(0, 0, 0);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .study-card img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .study-card h2 {
+        margin: 1rem 2rem 0.5rem;
+        color: #fff;
+    }
+
+    .study-card p {
+        padding: 0 1rem 1rem;
+        color: #fff;
+    }
+
+    .view-course-label {
+        margin: 1rem 2rem 0.5rem;
+        color: #fff;
+    }
+
+    .view-course-btn-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .view-course-button {
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        border: 2px solid rgb(255, 255, 255);
+    }
+
+    .view-course-button:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+    }
+
+    .study-card .apply-button {
+        margin: 1rem 0;
+        display: inline-block;
+    }
+
+    .search-bar {
+        font: 1em sans-serif;
+        padding: 100px 15px;
+        text-align: center;
+        background-color: rgb(0, 0, 0);
+        background-size: cover;
+    }
+
+    .search-bar label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 3rem; 
+        color: #f0f0f0;
+    }
+
+    .search-bar select,
+    .search-bar input[type="text"] {
+        margin: 0.5rem;
+    }
+
+    .search-bar select {
+        background-color: white;
+        color: black;
+        padding: 0.8rem 1.4rem;
+        border-radius: 25px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .search-bar input[type="text"] {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #aaa;
+        color: white;
+        font-size: 1rem;
+        padding: 0.5rem;
+        width: 80%;
+        max-width: 500px;
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+
+    .search-bar input[type="text"]::placeholder {
+        color: #aaa;
+    }
+
+    .search-bar input[type="text"]:focus {
+        border-bottom: 1px solid white;
+    }
+
+    .search-bar button {
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        padding: 0.8rem 1.4rem;
+        margin-top:10px;
+        border-radius: 25px;
+        border: 2px solid white;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .search-bar button:hover {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+    }
+
+    @media (max-width: 768px) {
+        .banner-content h1 {
+            font-size: 2rem;
+        }
+
+        .banner-actions {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-bar input[type="text"] {
+            width: 90%;
+        }
+
+        .study-options {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .choose-dmu {
+        background-color: #000; /* solid black background */
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+        padding: 0;
+    }
+    
+    .study-dmu {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        min-height: 600px;
+    }
+    
+    .study-dmu img {
+        width: 50%;
+        height: auto;
+        object-fit: cover;
+        max-height: 600px;
+        flex: 1;
+    }
+    
+    .study-dmu .text {
+        flex: 1;
+        padding: 4rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 600px;
+    }
+    
+    .study-dmu .text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .study-dmu .text p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        line-height: 1.7;
+    }
+    
+    .study-dmu .open-day-button {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+        padding: 0.8rem 1.4rem;
+        border-radius: 25px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        max-width: fit-content;
+    }
+    
+    .study-dmu .open-day-button:hover {
+        background-color: white;
+        color: black;
+    }
+
+    @media (max-width: 768px) {
+        .study-dmu {
+            flex-direction: column;
+        }
+    
+        .study-dmu img {
+            width: 100%;
+            max-height: 300px;
+        }
+    
+        .study-dmu .text {
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+    
+        .study-dmu .text h1 {
+            font-size: 2rem;
+        }
+    
+        .study-dmu .text p {
+            font-size: 1rem;
+        }
+    
+        .study-dmu .open-day-button {
+            margin: 0 auto;
+        }
+    }
+
+    .study-support-banner, .facilities-banner {
+        background-color: #fff;
+        color: #000;
+        padding: 4rem 1rem;
+        font-family: 'Segoe UI', sans-serif;
+      }
+    
+      .support-dmu, .facility-dmu {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 2rem;
+      }
+    
+      .support-dmu img, .facility-dmu img {
+        width: 100%;
+        max-width: 480px;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+    
+      .support-dmu .text, .facility-dmu .text {
+        flex: 1;
+        min-width: 280px;
+      }
+    
+      .support-dmu .text h1, .facility-dmu .text h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: #000;
+      }
+    
+      .support-dmu .text p, .facility-dmu .text p {
+        font-size: 1.05rem;
+        color: #333;
+        line-height: 1.7;
+        margin-bottom: 1.2rem;
+      }
+    
+      .black-button {
+        background-color: #000;
+        color: #fff;
+        border: 2px solid black;
+        padding: 0.8rem 1.4rem;
+        border-radius: 25px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+    
+      .black-button:hover {
+        background-color: white;
+        color: black;
+        border: 2px solid #000;
+      }
+    
+      @media (max-width: 768px) {
+        .support-dmu, .facility-dmu {
+          flex-direction: column;
+          text-align: center;
+        }
+    
+        .support-dmu img, .facility-dmu img {
+          max-width: 100%;
+        }
+    
+        .support-dmu .text h1, .facility-dmu .text h1 {
+          font-size: 2rem;
+        }
+    
+        .support-dmu .text p, .facility-dmu .text p {
+          font-size: 1rem;
+        }
+      }
+    
+    .contact-us-banner {
+        background-color: #000;
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+        padding: 0;
+    }
+    
+    .contact-dmu {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        min-height: 600px;
+    }
+    
+    .contact-dmu img {
+        width: 50%;
+        height: auto;
+        object-fit: cover;
+        max-height: 600px;
+        flex: 1;
+    }
+    
+    .contact-dmu .text {
+        flex: 1;
+        padding: 4rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 600px;
+    }
+    
+    .contact-dmu .text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .contact-dmu .text p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        line-height: 1.7;
+    }
+    
+    .contact-dmu .open-day-button {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+        padding: 0.8rem 1.4rem;
+        border-radius: 25px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        max-width: fit-content;
+    }
+    
+    .contact-dmu .open-day-button:hover {
+        background-color: white;
+        color: black;
+    }
+    @media (max-width: 768px) {
+        .contact-dmu {
+            flex-direction: column;
+        }
+    
+        .contact-dmu img {
+            width: 100%;
+            max-height: 300px;
+        }
+    
+        .contact-dmu .text {
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+    
+        .contact-dmu .text h1 {
+            font-size: 2rem;
+        }
+    
+        .contact-dmu .text p {
+            font-size: 1rem;
+        }
+    
+        .contact-dmu .open-day-button {
+            margin: 0 auto;
+        }
+    }    
+    .university-footer {
+        background-color: #000;
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+        padding: 3rem 2rem 0;
+      }
+      
+      .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        border-bottom: 1px solid #333;
+        padding-bottom: 2rem;
+      }
+      
+      .footer-info {
+        flex: 1;
+        min-width: 250px;
+      }
+      
+      .footer-info p {
+        margin: 0.5rem 0;
+        font-size: 0.95rem;
+      }
+      
+      .footer-logo {
+        max-width: 160px;
+        margin-bottom: 1rem;
+      }
+      
+      .social-icons {
+        margin-top: 1rem;
+        display: flex;
+        gap: 0.8rem;
+      }
+      
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+      
+      .social-icons a:hover {
+        background: white;
+        color: black;
+      }
+      
+      .footer-links {
+        flex: 1;
+        min-width: 250px;
+      }
+      
+      .footer-links h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .footer-links li {
+        margin-bottom: 0.8rem;
+      }
+      
+      .footer-links a {
+        color: white;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+      
+      .footer-links a:hover {
+        color: #ccc;
+      }
+      
+      .footer-map {
+        flex: 1;
+        min-width: 300px;
+        text-align: right;
+      }
+      
+      .footer-map img {
+        width: 100%;
+        max-width: 300px;
+        object-fit: contain;
+      }
+      
+      .footer-bottom {
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 0.9rem;
+        color: #aaa;
+      }
+      
+      .footer-legal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      
+      .footer-legal a {
+        color: #aaa;
+        text-decoration: none;
+      }
+      
+      .footer-legal a:hover {
+        text-decoration: underline;
+        color: white;
+      }
+      
+      @media (max-width: 768px) {
+        .footer-top {
+          flex-direction: column;
+          text-align: center;
+        }
+      
+        .footer-map {
+          text-align: center;
+        }
+      
+        .social-icons {
+          justify-content: center;
+        }
+      }      
+    </style>
+  </head>
+
+<body>
+  <section class="header"> 
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="images/logo with name.png" alt="University Logo">
+        </a>
+        <div class="nav-buttons">
+            <button class="menu-toggle">Menu</button>
+            <a href="admin_login.php"><button class="admin-login-btn">Log In</button></a>
+        </div>
+    </nav>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu">
+        <div class="sidebar-logo">
+            <a href="index.html">
+                <img src="images/dmu white logo.png" alt="University Logo">
+            </a>
+        </div>
+        <button class="close-menu">&times;</button>
+        <nav>
+            <ul>
+                <li class="menu-item">
+                    <span class="menu-title">Study ▸</span>
+                    <ul class="submenu">
+                        <li><a href="foundation-courses.php">International Foundataion Year</a></li>
+                        <li><a href="undergraduate-courses.php">Undergraduate</a></li>
+                        <li><a href="postgraduate-courses.php">Postgraduate</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="campus.html">Campus</a></li>
+                <li><a href="apply.php">Apply Now!</a></li>
+            </ul>
+            <!-- <div class="menu-images">
+                <div class="menu-image-box">
+                    <img src="images/campus.jpg" alt="Sustainability and Social Responsibility">
+                    <p>Sustainability and social responsibility</p>
+                    <a href="#">Read about our contributions so far →</a>
+                </div>
+                <div class="menu-image-box">
+                    <img src="images/campus02.jpg" alt="Discover Birmingham">
+                    <p>Discover Birmingham</p>
+                    <a href="#">Find out more →</a>
+                </div>
+                <div class="menu-image-box">
+                    <img src="images/pexels-divinetechygirl-1181675.jpg" alt="International Summer School">
+                    <p>International Summer School</p>
+                    <a href="#">Find out more →</a>
+                </div> -->
+            </div> 
+        </div>
+    </nav>
+</section>
+
+<section class="banner">
+    <div class="banner-content">
+      <h1>De Montfort University Dubai</h1>
+      <p>Where innovation meets excellence. Explore a world-class British education in the heart of Dubai, designed to empower your future.</p>
+      <div class="banner-actions">
+        <a href="about.html" class="apply-button">About Us ↗</a>
+        <a href="#" class="open-day-button">Join our next Open Day: 19 April</a>
+      </div>
+    </div>
+  </section>
+  
+<section class="search-bar">
+    <form action="search_results.php" method="GET">
+        <label for="search">Search Courses</label>
+        <input type="text" placeholder="Search for courses..." name="search" required>
+        <select name="study-level">
+            <option value="default" selected>Study Level</option>
+            <option value="foundation">International Foundation Year</option>
+            <option value="undergraduate">Undergraduate</option>
+            <option value="postgraduate">Postgraduate</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+</section>
+
+<section class="study-options">
+    <div class="study-card" id="foundation-year">
+        <img src="images/foundation-year.jpg" alt="International Foundation Year">
+        <h2>International Foundation Year</h2>
+        <p>Explore our foundation program. Learn more.</p>
+        <div class= "view-course-btn-container">
+            <a href="foundation-courses.php" class="view-course-button">View Courses ↗</a>
+        </div>
+      </div>
+    <div class="study-card" id="undergraduate">
+      <img src="images/undergraduate.jpg" alt="Undergraduate Study">
+      <h2>Undergraduate Courses</h2>
+      <p>Explore our undergraduate courses available. Learn more.</p>
+      <div class= "view-course-btn-container">
+        <a href="undergraduate-courses.php" class="view-course-button">View Courses ↗</a>
+      </div>
+    </div>
+    <div class="study-card" id="postgraduate-taught">
+      <img src="images/postgraduate-taught.jpg" alt="Postgraduate Taught">
+      <h2>Postgraduate Courses</h2>
+      <p>Explore our postgraduate courses available. Learn more.</p>
+      <div class= "view-course-btn-container">
+        <a href="postgraduate-courses.php" class="view-course-button">View Courses ↗</a>
+      </div>
+    </div>
+  </section> 
+
+  <section class="open-day-banner">
+    <div class="banner-content">
+        <h1>Open Day.<br>Discover Us.</h1>
+        <div class="banner-actions">
+            <a href="campus.html" class="apply-button">Campus Tour ↗</a>
+            <a href="apply.php" class="open-day-button">Join our next Open Day: 19 April</a>
+        </div>
+    </div>
+</section>
+
+<section class="facilities-banner" id="campus-facilities">
+    <div class="facility-dmu">
+      <div class="text">
+        <h1>World-Class Facilities</h1>
+        <p>From innovation labs to recreational lounges, our campus is equipped with everything you need to thrive.</p>
+        <p>Take advantage of modern technology and welcoming spaces designed with your success in mind.</p>
+        <a href="campus.html#facilities" class="black-button">Explore Facilities &#8594;</a>
+      </div>
+      <img src="images/laptop.jpg" alt="Campus Facilities">
+    </div>
+  </section>
+
+<section class="choose-dmu" id="choose-dmu">
+    <div class="study-dmu">
+      <img src="images/pexels-linkedin-1251861.jpg" alt="Study at DMU">
+      <div class="text">
+        <h1>Why Choose DMU?</h1>
+        <p>Are you an international student interested in studying at our university?</p>
+        <p>Explore life as an international student and how we support you.</p>
+        <a href="careers.html" class="open-day-button">Explore Careers &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="study-support-banner" id="study-support">
+    <div class="support-dmu">
+      <div class="text">
+        <h1>Academic & Career Support</h1>
+        <p>Our expert tutors, advisors, and career mentors are here to support you throughout your university journey.</p>
+        <p>Access personalized academic advice, internship guidance, and employability workshops.</p>
+        <a href="about.html" class="black-button">Learn More &#8594;</a>
+      </div>
+      <img src="images/library.jpg" alt="Support at DMU">
+    </div>
+  </section>
+
+<section class="contact-us-banner" id="contact-us">
+    <div class="contact-dmu">
+      <div class="text">
+        <h1>Get in Touch</h1>
+        <p>We’re here to help you with any questions you have about courses, admissions, or university life.</p>
+        <p>Reach out to our team and we’ll get back to you shortly.</p>
+        <a href="apply.php" class="open-day-button">Contact Us &#8594;</a>
+      </div>
+      <img src="images/contact-banner.jpg" alt="Contact Us">
+    </div>
+  </section>
+
+  <footer class="university-footer">
+    <div class="footer-top">
+      <div class="footer-info">
+        <img src="images/dmu white logo.png" alt="University Logo" class="footer-logo">
+        <p>Dubai, United Arab Emirates<br>Building #12, Dubai Internet City</p>
+        <p>Tel: +971 4 123 4567</p>
+  
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+  
+      <div class="footer-links">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#">Culture and Collections →</a></li>
+          <li><a href="#">Schools, Institutes & Departments →</a></li>
+          <li><a href="#">Services and Facilities →</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Legal</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Freedom of Information</a>
+        <a href="#">Cookies</a>
+        <a href="apply.php">Contact Us</a>
+      </div>
+      <p>&copy; De Montfort University 2025. All rights reserved.</p>
+    </div>
+  </footer>
+      
+</body>

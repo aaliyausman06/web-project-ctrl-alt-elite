@@ -1,0 +1,559 @@
+<!-- author@Aaliya Mohamad Usman P2840499 (HTML, CSS) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About DMU</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="script.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #000;
+    }
+
+    .image-slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding: 2rem;
+      }
+  
+      .image-slider img {
+        height: 400px;
+        width: auto;
+        flex: 0 0 auto;
+        border-radius: 12px;
+        scroll-snap-align: center;
+        object-fit: cover;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+  
+      .video-section {
+        max-width: 1000px;
+        margin: 4rem auto;
+        text-align: center;
+      }
+  
+      .video-section iframe {
+        width: 100%;
+        height: 500px;
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+
+    .open-day-banner {
+      background-color: #000;
+      color: white;
+    }
+
+    .about-hero {
+      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('images/248435_248194_Cover.avif');
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .about-hero h1 {
+      font-size: 3rem;
+      max-width: 800px;
+      line-height: 1.4;
+    }
+
+    .about-section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: transparent;
+      border-radius: 12px;
+    }
+
+    .about-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #000;
+      padding-left: 1rem;
+    }
+
+    .about-section p {
+      line-height: 1.8;
+      color: #333;
+      text-align: justify;
+    }
+
+    .mission-vision {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .mission-box {
+      flex: 1;
+      min-width: 280px;
+      background: #000;
+      color: white;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .mission-box h3 {
+      margin-top: 0;
+    }
+
+    .mission-box p {
+        color: #fff;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-card {
+      background: #fff;
+      border-left: 4px solid #000;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .stat-card h3 {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+
+    .stat-card p {
+      color: #555;
+      text-align: center;
+    }
+
+    .more-about-content {
+        margin-top: 3rem;
+      }
+  
+      .info-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 2rem;
+        
+      }
+  
+      .info-card {
+        flex: 1;
+        min-width: 280px;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.05);
+        border-left: 4px solid #000;
+      }
+  
+      .info-card h4 {
+        margin-top: 0;
+      }
+
+    .choose-dmu {
+        background-color: #f4f4f4;
+        padding: 4rem 1rem;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    
+    .study-dmu {
+        background-color: #ffffff;
+        border-radius: 12px;
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    .study-dmu img {
+        width: 100%;
+        max-width: 480px;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        object-fit: cover;
+    }
+    
+    .study-dmu .text {
+        flex: 1;
+        min-width: 280px;
+        padding: 20px
+    }
+    
+    .study-dmu .text h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: #000;
+    }
+    
+    .study-dmu .text p {
+        font-size: 1.05rem;
+        color: #333;
+        line-height: 1.7;
+        margin-bottom: 1.2rem;
+        
+    }
+    
+    .study-dmu .open-day-button {
+        background-color: transparent;
+        color: black;
+        border: 2px solid black;
+        padding: 0.8rem 1.4rem;
+        border-radius: 25px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .study-dmu .open-day-button:hover {
+        background-color: black;
+        color: white;
+    }
+    
+    @media (max-width: 768px) {
+        .study-dmu {
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        .study-dmu img {
+            max-width: 100%;
+        }
+    
+        .study-dmu .text h1 {
+            font-size: 2rem;
+        }
+    
+        .study-dmu .text p {
+            font-size: 1rem;
+        }
+    }    
+
+    .university-footer {
+        background-color: #000;
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+        padding: 3rem 2rem 0;
+      }
+      
+      .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        border-bottom: 1px solid #333;
+        padding-bottom: 2rem;
+      }
+      
+      .footer-info {
+        flex: 1;
+        min-width: 250px;
+      }
+      
+      .footer-info p {
+        margin: 0.5rem 0;
+        font-size: 0.95rem;
+      }
+      
+      .footer-logo {
+        max-width: 160px;
+        margin-bottom: 1rem;
+      }
+      
+      .social-icons {
+        margin-top: 1rem;
+        display: flex;
+        gap: 0.8rem;
+      }
+      
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+      
+      .social-icons a:hover {
+        background: white;
+        color: black;
+      }
+      
+      .footer-links {
+        flex: 1;
+        min-width: 250px;
+      }
+      
+      .footer-links h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .footer-links li {
+        margin-bottom: 0.8rem;
+      }
+      
+      .footer-links a {
+        color: white;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+      
+      .footer-links a:hover {
+        color: #ccc;
+      }
+      
+      .footer-map {
+        flex: 1;
+        min-width: 300px;
+        text-align: right;
+      }
+      
+      .footer-map img {
+        width: 100%;
+        max-width: 300px;
+        object-fit: contain;
+      }
+      
+      .footer-bottom {
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 0.9rem;
+        color: #aaa;
+      }
+      
+      .footer-legal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      
+      .footer-legal a {
+        color: #aaa;
+        text-decoration: none;
+      }
+      
+      .footer-legal a:hover {
+        text-decoration: underline;
+        color: white;
+      }
+      
+      @media (max-width: 768px) {
+        .footer-top {
+          flex-direction: column;
+          text-align: center;
+        }
+      
+        .footer-map {
+          text-align: center;
+        }
+      
+        .social-icons {
+          justify-content: center;
+        }
+      }   
+  </style>
+</head>
+<body>
+    <section class="header"> 
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/logo with name.png" alt="University Logo">
+            </a>
+            <div class="nav-buttons">
+                <button class="menu-toggle">Menu</button>
+                <a href="admin_login.php"><button class="admin-login-btn">Log In</button></a>
+            </div>
+        </nav>
+    
+        <div class="sidebar-menu">
+            <div class="sidebar-logo">
+                <a href="index.html">
+                    <img src="images/dmu white logo.png" alt="University Logo">
+                </a>
+            </div>
+            <button class="close-menu">&times;</button>
+            <nav>
+                <ul>
+                    <li class="menu-item">
+                        <span class="menu-title">Study ▸</span>
+                        <ul class="submenu">
+                            <li><a href="foundation-courses.php">International Foundataion Year</a></li>
+                            <li><a href="undergraduate-courses.php">Undergraduate</a></li>
+                            <li><a href="postgraduate-courses.php">Postgraduate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="campus.html">Campus</a></li>
+                    <li><a href="apply.php">Apply Now!</a></li>
+                </ul>
+                </div> 
+            </div>
+        </nav>
+    </section>
+    <section class="about-hero">
+        <h1>Discover Our Dubai Campus — Designed to Inspire</h1>
+      </section>
+    
+      <section class="about-section">
+        <h2>Campus Overview</h2>
+        <p>Located in the heart of Dubai Internet City, our state-of-the-art campus offers a unique academic environment that blends modern architecture, interactive spaces, and world-class facilities. Students enjoy access to innovative labs, collaborative study zones, a digital library, and comfortable social spaces that encourage connection and creativity.</p>
+
+        <section class="video-section">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gnY-GbyK-PU?si=0QIsKaw8nqTkAry4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    
+        <div class="mission-vision">
+          <div class="mission-box">
+            <h3>Smart Classrooms</h3>
+            <p>Equipped with cutting-edge technology to facilitate interactive and engaging learning experiences.</p>
+          </div>
+          <div class="mission-box">
+            <h3>Collaborative Hubs</h3>
+            <p>Comfortable lounges and open areas designed for teamwork, research, and group innovation projects.</p>
+          </div>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>24/7</h3>
+            <p>Library & Study Space Access</p>
+          </div>
+          <div class="stat-card">
+            <h3>10+</h3>
+            <p>Dedicated Labs & Studios</p>
+          </div>
+          <div class="stat-card">
+            <h3>WiFi+</h3>
+            <p>Campus-wide High-Speed Connectivity</p>
+          </div>
+          <div class="stat-card">
+            <h3>Green</h3>
+            <p>Eco-friendly & Sustainable Design</p>
+          </div>
+        </div>
+    
+        <div class="more-about-content">
+          <h2>Campus Facilities</h2>
+          <p>DMU Dubai offers a comprehensive array of amenities that cater to academic, personal, and professional growth. Our facilities are tailored to offer a stimulating student experience and include:</p>
+          <div class="info-cards">
+            <div class="info-card">
+              <h3>Innovation Labs</h3>
+              <p>From AI and robotics to media production, students can access hands-on experience with the latest tech.</p>
+            </div>
+            <div class="info-card">
+              <h3>Student Lounge</h3>
+              <p>A relaxed space for socializing, group discussions, and university events and activities.</p>
+            </div>
+            <div class="info-card">
+              <h3>Fitness & Wellness</h3>
+              <p>On-campus gym and mindfulness zones promote physical and mental well-being.</p>
+            </div>
+          </div>
+        </div>
+    
+        <br>
+        <h2>Life at DMU Dubai</h2>
+        <p>University life extends beyond the classroom at DMU. Our campus community is vibrant, diverse, and filled with activities that help students grow socially and professionally. You’ll have access to clubs, career fairs, speaker events, hackathons, and cultural celebrations throughout the year.</p>
+
+        <section class="image-slider">
+        <img src="images/campus1.jpg" alt="Campus View 1">
+        <img src="images/campus2.jpg" alt="Campus View 2">
+        <img src="images/campus3.jpg" alt="Campus View 3">
+        <img src="images/campus4.jpg" alt="Campus View 4">
+        <img src="images/campus5.jpg" alt="Campus View 5">
+        </section>
+      </section>
+    
+      <section class="choose-dmu" id="choose-dmu">
+        <div class="study-dmu">
+          <div class="text">
+            <h1>Got Questions?</h1>
+            <p>Get in touch with our team for campus tours, admission queries, or general questions.</p>
+            <a href="apply.php" class="open-day-button">Contact Us &#8594;</a>
+          </div>
+          <img src="images/unnamed (1).jpg" alt="Contact Us">
+        </div>
+      </section>
+
+<footer class="university-footer">
+    <div class="footer-top">
+      <div class="footer-info">
+        <img src="images/dmu white logo.png" alt="University Logo" class="footer-logo">
+        <p>Dubai, United Arab Emirates<br>Building #12, Dubai Internet City</p>
+        <p>Tel: +971 4 123 4567</p>
+  
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+  
+      <div class="footer-links">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#">Culture and Collections →</a></li>
+          <li><a href="#">Schools, Institutes & Departments →</a></li>
+          <li><a href="#">Services and Facilities →</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Legal</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Freedom of Information</a>
+        <a href="#">Cookies</a>
+        <a href="apply.php">Contact Us</a>
+      </div>
+      <p>&copy; De Montfort University 2025. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
